@@ -76,8 +76,14 @@
     .logo-icon {
       width: 35px;
       height: 35px;
+      background: var(--primary);
       border-radius: 50%;
-      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--background);
+      font-weight: 900;
+      font-size: 0.9rem;
     }
 
     .nav-menu {
@@ -156,9 +162,9 @@
       background: rgba(34, 197, 94, 0.1);
     }
 
-    /* Hero Section - Enhanced Background System */
+    /* Hero Section */
     .hero {
-      min-height: 95vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -166,36 +172,12 @@
       text-align: center;
       padding: 120px 20px 80px;
       position: relative;
-      overflow: hidden;
-      background-image: url('https://framerusercontent.com/images/44bgYYI7gVX7tODZd0dqNcnXAeo.png?scale-down-to=2048');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    /* Dark Overlay for Text Readability */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.6) 100%
-      );
-      z-index: -1;
     }
 
     .hero-content {
-      position: relative;
-      max-width: 4000px;
+      max-width: 1200px;
       margin: 0 auto 60px;
       text-align: center;
-      z-index: 1;
     }
 
     .hero-title {
@@ -204,8 +186,7 @@
       line-height: 1.1;
       margin-bottom: 30px;
       color: var(--primary);
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-      animation: fadeInUp 1s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero-subtitle {
@@ -216,8 +197,6 @@
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-      animation: fadeInUp 1s ease-out 0.2s both;
     }
 
     .cta-button {
@@ -233,14 +212,12 @@
       transition: all 0.3s ease;
       cursor: pointer;
       margin-bottom: 40px;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
-      animation: fadeInUp 1s ease-out 0.4s both;
     }
 
     .cta-button:hover {
       background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
     }
 
     .app-availability {
@@ -250,7 +227,6 @@
       margin-bottom: 60px;
       justify-content: center;
       flex-wrap: wrap;
-      animation: fadeInUp 1s ease-out 0.6s both;
     }
 
     .availability-text {
@@ -259,7 +235,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .store-icons {
@@ -268,122 +243,48 @@
     }
 
     .store-icon {
-      width: 45px;
-      height: 45px;
+      width: 35px;
+      height: 35px;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-light);
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
       cursor: pointer;
-      backdrop-filter: blur(10px);
     }
 
     .store-icon:hover {
       background: var(--primary);
       color: var(--background);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+      transform: translateY(-2px);
     }
 
-    /* Mobile-Specific Background Adjustments */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 100px 15px 60px;
-        min-height: 100vh;
-        background-position: center center;
-      }
-
-      .hero::before {
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.7) 0%,
-          rgba(0, 0, 0, 0.5) 50%,
-          rgba(0, 0, 0, 0.7) 100%
-        );
-      }
-
-      .navbar {
-        left: 10px;
-        right: 10px;
-        padding: 10px 15px;
-      }
-
-      .nav-menu {
-        display: none;
-      }
-
-      .mobile-menu-toggle {
-        display: block;
-      }
-
-      .store-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-
-      .app-availability {
-        gap: 10px;
-      }
+    /* Hero Image */
+    .hero-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
     }
 
-    /* Tablet Adjustments */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .hero {
-        background-size: 90% 90%;
-      }
+    .hero-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
     }
 
-    /* Large Desktop Adjustments */
-    @media (min-width: 1920px) {
-      .hero {
-        background-size: 80% 80%;
-      }
-    }
-
-    /* Ultra-wide Screen Adjustments */
-    @media (min-width: 2560px) {
-      .hero {
-        background-size: 80% 80%;
-        background-position: center center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        padding: 90px 10px 50px;
-      }
-
-      .logo {
-        font-size: 1.1rem;
-      }
-
-      .logo-icon {
-        width: 30px;
-        height: 30px;
-      }
-
-      .navbar {
-        left: 5px;
-        right: 5px;
-        padding: 8px 12px;
-      }
-
-      .store-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-      }
-
-      .cta-button {
-        padding: 15px 30px;
-        font-size: 1rem;
-      }
+    .hero-image:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 40px 100px rgba(34, 197, 94, 0.2);
     }
 
     /* How to Join Us Section */
@@ -788,8 +689,18 @@
       color: #6B7280;
     }
 
-    /* Additional Responsive Design */
+    /* Responsive Design */
     @media (max-width: 1024px) {
+      .navbar {
+        left: 15px;
+        right: 15px;
+        padding: 12px 20px;
+      }
+
+      .nav-menu {
+        gap: 25px;
+      }
+
       .join-step {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -807,6 +718,20 @@
     }
 
     @media (max-width: 768px) {
+      .navbar {
+        left: 10px;
+        right: 10px;
+        padding: 10px 15px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
       .join-steps {
         gap: 100px;
       }
@@ -822,6 +747,10 @@
         padding: 80px 20px;
       }
 
+      .hero {
+        padding: 100px 15px 60px;
+      }
+
       .features-grid,
       .services-grid {
         grid-template-columns: 1fr;
@@ -830,6 +759,16 @@
     }
 
     @media (max-width: 480px) {
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .logo-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+      }
+
       .step-image {
         max-width: 250px;
       }
@@ -837,6 +776,12 @@
       .contact-form,
       .feature-card {
         padding: 25px;
+      }
+
+      .navbar {
+        left: 5px;
+        right: 5px;
+        padding: 8px 12px;
       }
     }
 
@@ -866,18 +811,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Hero Loading Animation */
-    @keyframes heroLoad {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.05);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
   </style>
 </head>
 
@@ -885,10 +818,10 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">
-        <img src="1722440841558.jpg" alt="ConnexGrow Logo" class="logo-icon" />
-        CONNEXGROW
-      </a>
+    <a href="1722440841558.jpg" class="logo">
+      <img src="1722440841558.jpg" alt="ConnexGrow Logo" class="logo-icon" />
+      CONNEXGROW
+    </a>
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#features" class="nav-link">Benefits</a></li>
@@ -935,6 +868,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image-container">
+      <img src="https://framerusercontent.com/images/44bgYYI7gVX7tODZd0dqNcnXAeo.png?scale-down-to=2048" alt="ConnexGrow Business Dashboard" class="hero-image">
     </div>
   </section>
 
@@ -1315,7 +1253,7 @@
     // Contact form handling
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-
+      
       // Create success message
       const successMsg = document.createElement('div');
       successMsg.innerHTML = '✅ Thank you! We\'ll get back to you within 24 hours.';
@@ -1328,10 +1266,10 @@
         text-align: center;
         font-weight: 600;
       `;
-
+      
       this.appendChild(successMsg);
       this.reset();
-
+      
       setTimeout(() => {
         successMsg.remove();
       }, 5000);
@@ -1348,65 +1286,10 @@
       });
     });
 
-    // Advanced Background Image Responsive Handling
-    function handleBackgroundResize() {
-      const heroSection = document.querySelector('.hero');
-
-      if (!heroSection) return;
-
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      if (screenWidth <= 768) {
-        heroSection.style.backgroundSize = 'cover';
-      } else {
-        heroSection.style.backgroundSize = '80% 80%';
-      }
-
-      // Ensure hero section has proper height
-      heroSection.style.minHeight = '100vh';
-    }
-
-    // Apply background fixes on various events
-    window.addEventListener('resize', () => {
-      setTimeout(handleBackgroundResize, 100);
-    });
-
-    window.addEventListener('orientationchange', () => {
-      setTimeout(handleBackgroundResize, 200);
-    });
-
-    // Initialize everything on page load
+    // Initialize animations on page load
     window.addEventListener('load', () => {
       document.querySelector('.hero-content').classList.add('fade-in-up');
-      handleBackgroundResize();
     });
-
-    // Initial call
-    document.addEventListener('DOMContentLoaded', () => {
-      handleBackgroundResize();
-    });
-
-    // Ensure background covers viewport on scroll (mobile fix)
-    let ticking = false;
-    function updateBackgroundOnScroll() {
-      if (window.innerWidth <= 768) {
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-          heroSection.style.backgroundSize = 'cover';
-        }
-      }
-      ticking = false;
-    }
-
-    function requestBackgroundTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateBackgroundOnScroll);
-        ticking = true;
-      }
-    }
-
-    window.addEventListener('scroll', requestBackgroundTick);
   </script>
 </body>
 </html>
